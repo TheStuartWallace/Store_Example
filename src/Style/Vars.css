@@ -1,0 +1,15 @@
+:root{
+	--GlobalLinkColour: black;
+	--GlobalBackgroundColor: #FFFFFF;
+
+	--NavigationBarBackgroundHover: #cccccc;
+
+	--StoreItemPageImageElementBackground:#e1e1e1;
+
+	--ProductEditorTitleHover:#dddddd;
+	--ProductEditorTextAreaHover:#dddddd;
+
+	--GlobalNavBallBackground:#878787;
+
+	--AdminColumnSettingsBackground:#d9d9d9;
+}

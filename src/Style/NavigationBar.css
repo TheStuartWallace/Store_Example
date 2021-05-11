@@ -1,0 +1,84 @@
+.navWrapper{
+	font-weight: 		bold;
+	margin:				2px auto;
+	overflow: 			auto;
+	padding:			0.1vw;
+
+	display: 			flex;		
+	align-items: 		center;	
+	justify-content: 	center;
+	flex-direction: 	row;
+	border-bottom:		1px solid black;
+	background: 		white;
+
+	position: absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+
+	height:50px;
+}
+
+.navButtonHome, .navButtonCatagories, .navButtonBasket{
+	border:				0vw solid black;
+	height:				99%;			
+	min-height:			99%;
+	width:				99%;			
+	min-width: 			99%;
+	margin:				0px auto;
+	border-radius: 		4px;
+	background: 		white;
+	font-size:			1rem;
+	font-family: 		AndBasR;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navLink{
+	width:				20%;			
+	min-width:			20%;
+	height:				100%; 		
+	min-height: 		100%;
+	margin:				0px 	2px;
+	text-align: 		center;
+}
+
+.navButtonHome:hover, .navButtonCatagories:hover, .navButtonBasket:hover{
+	background: 		var(--NavigationBarBackgroundHover);
+}
+
+.navButtonHome{}
+.navButtonCatagories{}
+.navButtonBasket{}
+
+.navLinkButtonText{
+	display: block;
+}
+
+.navLinkButtonImage{
+	display: none;
+	height:70%;
+}
+
+@media only screen and (max-width:650px){
+	.navLink, .navButtonHome, .navButtonCatagories, .navButtonBasket{
+		font-size:0.8rem;
+	}
+
+	.navTitle{
+		font-size:0.8rem;
+	}
+}
+
+
+@media only screen and (max-width:650px){
+
+	.navLinkButtonText{
+		display: none;
+	}
+
+	.navLinkButtonImage{
+		display: block;
+	}
+}

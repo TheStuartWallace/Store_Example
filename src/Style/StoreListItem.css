@@ -1,0 +1,57 @@
+.sliWrapper{
+	width:30%;
+	height:50%;
+	margin:1vh 0.5vw;
+}
+
+.sli{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;	
+	width:100%;
+	height:100%;
+	border:0.1vw solid black;
+	border-radius: 0.4vw;
+}
+
+.sliImage{
+	width:50%;
+	height:60%;
+}
+
+.sliTitle{
+	font-weight: bold;
+	font-size: 1rem;
+	overflow: hidden;
+	width:90%; 
+	height:10%;
+	text-align: center;
+}
+
+.sliPrice{
+	text-align: center;
+	width:90%;
+	height: 10%; 
+}
+
+.sliBuy{
+	width:90%; 
+	height:10%;
+	border:0vw;
+	font-weight: bold;
+	color:white;
+	background: black;
+}
+
+@media only screen and (max-width:650px){
+	.sliWrapper{
+		width:48%;
+	}
+}
+
+@media only screen and (max-width:450px){
+	.sliWrapper{
+		width:100%;
+	}
+}

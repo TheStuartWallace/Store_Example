@@ -1,0 +1,78 @@
+.MainPageTitleBar{
+	font-size:			4rem;
+	margin:				1vw 	auto;
+	text-align: 		center;
+}
+
+.MainPageColumnWrapper{
+	max-width:			95%;
+	max-height: 		80%;
+	min-width:			95%;
+	min-height:			80%;
+	display: 			flex;
+	justify-content: 	center;
+	align-items:		center;
+	flex-direction: 	row;
+	overflow: 			hidden;
+}
+
+.MainPageColumnLeft, .MainPageColumnCenter, .MainPageColumnRight{
+	width:				32%;
+	height:				100%;
+	margin:				0vh 	0.2vw;
+}
+
+.MainPageColumn{
+	display: 			flex;
+	justify-content: 	center;
+	align-items: 		center;
+	height:				100%;
+	overflow: 			hidden;
+}
+
+.MainPageColumnImage{
+	height:100%;
+}
+
+@media only screen and (max-width:800px){
+	.MainPageColumnLeft, .MainPageColumnCenter{
+		width:			50%;
+		height:			100%;
+		margin:			0vh 0.2vw;
+	}
+
+	.MainPageColumnRight{
+		display:	 	none;
+	}
+}
+
+@media only screen and (max-width:500px){
+	.MainPageTitleBar{
+		font-size:		3rem; 
+	}
+	.MainPageColumnCenter{
+		width:			100%;
+		height:			100%;
+		margin:			0vh 	0.2vw;
+	}
+
+	.MainPageColumnLeft, .MainPageColumnRight{
+		display: 		none;
+	}
+}
+
+
+@media only screen and (max-width:380px){
+	.MainPageTitleBar{
+		font-size:		2rem; 
+	}
+	.MainPageColumnCenter{
+		width:			100%;
+		height:			100%;
+		margin:			0vh 	0.2vw;
+	}
+
+	.MainPageColumnLeft, .MainPageColumnRight{
+		display:	 	none;
+	}
+}

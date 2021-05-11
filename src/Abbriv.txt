@@ -1,0 +1,22 @@
+ACC = Account
+ADM = Admin
+AUH = Auth
+BSK = Basket
+CAT = Catagory
+COS = CheckoutSuccess
+FBF = Firebase
+FBA = FirebaseAction
+LDS = LoadingScreen
+MNP = MainPage
+NAV = NavigationBar
+PED = ProductEditor
+PRL = ProductList
+SCH = SearchBox
+SNG = SignIn
+SIP = StoreItemPage
+SLP = StoreList
+SLI = StoreListItem
+TTL = TitleBar
+
+VOP = ViewOrder
+PNV = PageNavigation

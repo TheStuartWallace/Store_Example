@@ -1,0 +1,178 @@
+.vopWrapper{
+	width:90%;
+	height:90%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	overflow: auto;
+}
+
+.vopPanelError, .vopPanelTitle, .vopPanelStatus, .vopPanelShipping, .vopPanelItems, .vopPanelTotal{
+	width:80%;
+	margin:0.5vh auto;
+	background: #d4d4d4;
+	padding:1vh;
+}
+
+.vopPanelError{
+	font-weight: bold;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.vopPanelStatus{
+
+}
+
+.vopPanelTitle{
+	font-size:2rem;
+	font-weight: bold;
+}
+
+.vopPanelStatusBig{
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.vopPanelItems{
+	overflow: scroll;
+	min-height: 20vh
+}
+
+.vopPanelStatusSmall{
+	font-size: 0.8rem;
+}
+
+.vopPanelInnerTitle{
+	font-weight: bold;
+}
+
+.vopPanelOrderItem{
+	padding:0.5vw;
+	background: #ebe8e8;
+	margin:0.2vw auto;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.vopPanelOrderItemTitle{
+	font-size:1rem;
+	font-weight: bold;
+}
+
+.vopPanelOrderItemPrice{
+	font-size:0.8rem;
+}
+
+.vopPanelTotal{
+	font-weight: bold;
+	font-size:1.5rem;
+}
+
+@media only screen and (max-width:650px){
+	.vopPanelError{
+		font-size:1.5rem;
+	}
+
+	.vopPanelError, .vopPanelTitle, .vopPanelStatus, .vopPanelShipping, .vopPanelItems, .vopPanelTotal{
+		width:95%;
+		font-size: 0.8rem;
+	}
+
+	.vopPanelInnerTitle{
+		font-size: 1rem;
+	}
+
+	.vopPanelTitle{
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (max-width:480px){
+	.vopPanelError{
+		font-size:1rem;
+	}
+
+
+	.vopPanelError, .vopPanelTitle, .vopPanelStatus, .vopPanelShipping, .vopPanelItems, .vopPanelTotal{
+		width:95%;
+	}
+}
+
+@media only screen and (max-height:750px){
+	.vopWrapper{
+		height:85%;
+	}
+
+	.vopPanelTitle{
+		font-size:1rem;
+	}
+
+	.vopPanelShipping{
+		font-size: 0.8rem;
+	}
+
+	.vopPanelInnerTitle{
+		font-size: 0.9rem;
+	}
+
+	.vopPanelOrderItemTitle{
+		font-size:1rem;
+		font-weight: bold;
+	}
+
+	.vopPanelOrderItemPrice{
+		font-size:0.8rem;
+	}
+}
+
+@media only screen and (max-height:500px){
+	.vopWrapper{
+		height:85%;
+	}
+
+	.vopPanelTitle{
+		font-size:1rem;
+	}
+
+	.vopPanelStatusBig{
+		font-size: 1rem;
+		font-weight: bold;
+	}
+
+	.vopPanelStatusSmall{
+		display: none;
+	}
+
+	.vopPanelShipping{
+		font-size: 0.8rem;
+	}
+
+	.vopPanelInnerTitle{
+		font-size: 0.8rem;
+	}
+
+	.vopPanelOrderItem{
+		padding:0vw;
+	}
+
+	.vopPanelOrderItemTitle{
+		font-size:0.6rem;
+		font-weight: bold;
+		padding: 0vw;
+	}
+
+	.vopPanelOrderItemPrice{
+		font-size:0.5rem;
+	}
+
+	.vopPanelTotal{
+		font-weight: bold;
+		font-size:1rem;
+	}
+
+}

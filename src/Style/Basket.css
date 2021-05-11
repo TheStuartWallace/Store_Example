@@ -1,0 +1,248 @@
+.basketWrapper{
+	width:100%;
+	height:100%;
+	position: absolute;
+	top:0vw;
+	left: 0vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.basketContainer{
+	width:60%;
+	height:85%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.basketTopBar{
+	border: 0.1vw solid black;
+	width:100%;
+	height:10%;
+	text-align: center;
+	font-size:2rem;
+	margin:1vh auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.basketList{
+	border: 0.1vw solid black;
+	width:100%;
+	height:75%;
+	overflow: auto;
+	margin:1vh auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.basketListItem{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width:90%;
+	height:20%;
+	margin:1vw;
+}
+
+.basketListItemImage{
+	width:100%;
+}
+
+.basketListItemImageCont, .basketListItemName, .basketListItemPrice, .basketListItemQuantity, .basketListItemRemove{
+	height:90%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	text-align: center;
+
+	border: 0.1vw solid black;
+
+	margin:0vh 0.5vw;
+
+	overflow: hidden;
+}
+
+.basketListItemImageCont{
+	width:10%;
+	background: black;
+}
+
+.basketListItemName{
+	width:50%;
+}
+
+.basketListItemPrice{
+	width:20%;
+}
+
+.basketListItemRemove{
+	width:5%;
+}
+
+.basketListItemPriceMain{
+	font-size:1.1vw;
+	font-weight: bold;
+}
+.basketListItemPriceDelivery{
+	font-size:0.8vw;
+	font-weight: normal;
+}
+
+.basketBottomBar{
+	border: 0.1vw solid black;
+	width:100%;
+	height:10%;
+	margin:1vh auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.basketListItemQuantityInput{
+	border:0vw solid transparent;
+	text-align: center;
+	width:100%;
+}
+
+.basketListItemQuantityRemove{
+	margin:0.5vw auto;
+	font-weight: bold;
+	border-radius: 5vw;
+	width: 1.5vw;
+	height:1.5vw;
+	font-size:0.8vw;
+	padding: 0vw;
+	background: black;
+	color:white;
+	text-align: center;
+	border:0.2vw solid black;
+}
+
+.basketCheckoutButton{
+	border:0.1vw solid black;
+	width:50%;
+	height:50%;
+	font-weight: bold;
+	font-size:1.1rem;
+	transition: background 1s;
+}
+
+.basketCheckoutButton:hover{
+	background: lightgrey;
+}
+
+@media only screen and (max-width:800px){
+	.basketContainer, .basketListItem{
+		width:90%;
+	}
+
+	.basketListItemPriceMain{
+		font-size: 1rem;
+	}
+
+	.basketListItemPriceDelivery{
+		font-size:0.8rem;
+	}
+	
+	.basketListItemImageCont{
+		display: none;
+	}
+
+	.basketListItemName{
+		width:60%;
+	}
+
+	.basketListItemPrice{
+		width:20%;
+	}
+
+	.basketListItemQuantity, .basketListItemRemove{
+		width:10%;
+	}
+}
+
+@media only screen and (max-width:400px){
+	.basketListItemPriceMain{
+		font-size: 0.8rem;
+	}
+
+	.basketListItemPriceDelivery{
+		font-size:0.8rem;
+	}
+	
+	.basketListItemImageCont{
+		display: none;
+	}
+
+	.basketListItemName{
+		width:60%;
+		font-size: 0.9rem;
+	}
+
+	.basketListItemPrice{
+		width:20%;
+	}
+
+	.basketListItemQuantity, .basketListItemRemove{
+		width:10%;
+	}
+
+	.basketBottomBar{
+		font-size:0.8rem;
+		flex-direction: column;
+	}
+
+	.basketCheckoutButton{
+		width:95%;
+	}
+}
+
+
+@media only screen and (max-height:600px){
+	.basketWrapper{
+		justify-content: flex-end;
+	}
+}
+
+@media only screen and (max-height:400px){
+	.basketTopBar{
+		font-size:0.8rem;
+	}
+
+	.basketListItem{
+		height:75%;
+	}
+
+	.StripeCheckout{
+		height:100%;
+	}
+
+	.basketBottomBar{
+		font-size:0.8rem;
+		flex-direction: row;
+	}
+
+	.basketCheckoutButton{
+		font-size:0.5rem;
+	}
+}
+
+@media only screen and (max-height:300px){
+	.basketTopBar{
+		display: none;
+	}
+}

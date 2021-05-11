@@ -1,0 +1,171 @@
+.admWrapper{
+	width:99%;
+	height: 99%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.admPanel{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	width:100%;
+	height:80%;
+	overflow: auto;
+	margin:2vw auto;
+}
+
+.admOI{
+	border:0.15vw solid black;
+	border-radius: 0.2vw;
+	margin:1vh 0.5vw;
+	width:48%;
+	text-align: center;
+	overflow: auto;
+}
+
+.admOITitle{
+	font-weight: bold;
+	background: red;
+	height:4vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: 0.1vw 0.1vw 0vw 0vw;
+}
+
+.admOIAddress, .admOIBio{
+	overflow: auto;
+	border-bottom: 0.1vw solid black;
+	margin:0.2vw 0vw;
+}
+
+.admOIAddressTitle,.admOIBioTitle{
+	font-weight: bold;
+}
+
+.admPanelColumnSettings{
+	width:100%;
+	height:80%;
+}
+.admColumnSettingsWrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: row;
+	width:100%;
+	height:75%;
+}
+
+.admColumnSettingsLeft, .admColumnSettingsCenter, .admColumnSettingsRight{
+	margin:0vh 0.5vw;
+	background: var(--AdminColumnSettingsBackground);
+	text-align: center;
+	width:35%;
+	height:90%;
+	overflow: hidden;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.admPanelColumnSettings{
+	height:100%;
+	text-align: center;
+}
+
+.admColumnSettingsTitle{
+	font-weight: bold;
+	font-size:1.5rem;
+}
+
+.admColumnSettingsInputLink{
+	width:90%;
+	height:10vh;
+	text-align: center;
+	word-wrap: break-word;
+	resize: none;
+}
+
+.admColumnSettingsInput{
+	width:90%;
+	height:2vh;
+	text-align: center;
+	word-wrap: break-word;
+	resize: none;
+}
+
+.admColumnSettingImage, .admColumnSettingAlt, .admColumnSettingLink, .admColumnSettingColor{
+	margin:1vh auto;
+	width:90%;
+	height:15%;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	background: #ededed;
+}
+
+.admColumnSettingImage{
+	height:30%;
+}
+
+@media only screen and (max-width:500px){
+	.admOI{
+		width:100%;
+	}
+}
+
+@media only screen and (max-width:800px){
+
+	.admColumnSettingsWrapper{
+		flex-wrap: wrap;
+		overflow: auto;
+		height:100%;
+	}
+
+	.admColumnSettingsLeft, .admColumnSettingsCenter, .admColumnSettingsRight{
+		width:100%;
+		margin:1vw auto;
+	}
+}
+
+
+@media only screen and (max-height:600px){
+	.admOI{
+		height:80%;
+	}
+
+
+	.admOIAddress, .admOIBio{
+		height:30%;
+	}
+}
+
+
+@media only screen and (max-height:500px){
+	.admOI{
+		width:100%;
+		height:100%;
+	}
+
+	.admOITitle{
+		display: none;
+	}
+
+	.admOIStatus{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+	.admOIAddress, .admOIBio{
+		height:40%;
+	}
+}

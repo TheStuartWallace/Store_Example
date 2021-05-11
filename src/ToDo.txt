@@ -1,0 +1,10 @@
+[x] Fix catagory styling
+[x] Fix store list item styling
+	[x] Background color
+	[x] Height styling
+	[x] Font style
+	[x] Screen width style
+[x] Fix editor styling
+[x] Re-add upload image to editor
+[x] Fix product description editing page
+[ ] Add refunding to admin page

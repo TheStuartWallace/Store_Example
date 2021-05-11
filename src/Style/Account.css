@@ -1,0 +1,92 @@
+.accWrapper{
+	width:100%;
+	height:100%;
+	overflow: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding:1%;
+}
+
+.accTitle{
+	font-size:3rem;
+	margin:2%;
+}
+
+.accPanel{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	border:0.2vw solid grey;
+	border-radius: 0.4vw;
+	width:80%;
+	height:50%;
+	overflow: auto;
+}
+
+.accPanelTitle{
+	font-size:1.5rem;
+	font-weight: bold;
+	margin:1% 0%;
+}
+
+.accPanelItem{
+	width:90%;
+	text-align: center;
+	margin:0.5vw auto;
+}
+
+.accPanelInput, .accPanelButton{
+	border:1px solid black;
+	border-radius: 4px;
+	width:50%;
+	height:3vh;
+} 
+
+.accOHItem{
+	border:1px solid black;
+	margin:0.25vw auto;
+}
+
+.accOHItemPlaced{
+	font-weight: bold;
+}
+
+.accOHItemInfo{
+	width: 100%;
+}
+
+@media only screen and (max-width:400px){
+	.accPanelInput, .accPanelButton{
+		width:90%;
+	}
+}
+
+@media only screen and (max-height:700px){
+	.accPanel{
+		height:70%;
+	}
+}
+
+@media only screen and (max-height:500px){
+	.accPanel{
+		margin-top:10vh;
+		height:70%;
+		justify-content: initial;
+	}
+
+	.accPanelItem{
+		margin:5vh auto;
+	}
+
+	.accPanelItem{
+		height:50%;
+	}
+
+	.accPanelInput, .accPanelButton{
+		height:70%;
+	}
+}

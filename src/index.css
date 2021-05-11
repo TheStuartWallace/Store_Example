@@ -1,0 +1,110 @@
+html,body{
+	font-family: 		AndBasR;
+	width:				100%;
+	height:				100%;
+	overflow: 			hidden;
+	background: 		var(--GlobalBackgroundColor);
+	font-size:			16px;	
+}
+
+a{
+	color:				var(--GlobalLinkColour);
+	text-decoration: 	none;
+}
+
+@font-face{
+	font-family: 		AndBasR;
+	src: 				url('./Font/AndBasR.ttf') format("truetype");
+}
+
+label{
+	font-weight: bold;
+}
+
+#root{
+	position: 			absolute;
+	top:				0px;
+	left:				0px;
+	width:				100%;
+	height:				100%;
+	display:			flex;
+	justify-content: 	center;
+	align-items: 		center;
+	flex-direction: 	column;
+}
+
+.PageWrapper{
+	width: 				99%;
+	height:				99%;
+	display:			flex;
+	justify-content: 	center;
+	align-items: 		center;
+	flex-direction: 	column;
+}
+
+.GlobalSpacer{
+	width:100%;
+	height:0.1vh;
+	margin:0.5vh auto;
+	background: grey;
+}
+
+.GlobalPageNavigation{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.GlobalNavBall, .GlobalNavBallFilled, .GlobalNavBallLeftCap, .GlobalNavBallRightCap{
+	border-radius: 100vw;
+	border:0.15vw solid var(--GlobalNavBallBackground);
+	width:1vw;
+	height:1vw;
+	margin:0.5vh 0.1vw;
+	background: var(--GlobalNavBallBackground);
+}
+
+.GlobalNavBall{		background: none;	}
+
+.GlobalNavBallLeftCap{
+	border-top-right-radius: 0vw;
+	border-bottom-right-radius: 0vw;
+}
+
+.GlobalNavBallRightCap{
+	border-top-left-radius: 0vw;
+	border-bottom-left-radius: 0vw;
+}
+
+@media only screen and (max-width:1000px){
+	.GlobalNavBall, .GlobalNavBallFilled, .GlobalNavBallLeftCap, .GlobalNavBallRightCap{
+		width:2vw;
+		height:2vw;
+		margin:1vh 0.2vw;
+	}
+}
+
+@media only screen and (max-width:400px){
+	.GlobalNavBall, .GlobalNavBallFilled, .GlobalNavBallLeftCap, .GlobalNavBallRightCap{
+		width:5vw;
+		height:5vw;
+		margin:3vh 0.7vw;
+	}	
+}
+
+
+@import "./Style/Vars.css";
+@import "./Style/StoreListItem.css";
+@import "./Style/StoreList.css";
+@import "./Style/SearchBox.css";
+@import "./Style/StoreItemPage.css";
+@import "./Style/Basket.css";
+@import "./Style/CheckoutSuccess.css";
+@import "./Style/NavigationBar.css";
+@import "./Style/MainPage.css";
+@import "./Style/Catagory.css";
+@import "./Style/Account.css";
+@import "./Style/ProductEditor.css";
+@import "./Style/Admin.css";
+@import "./Style/ViewOrder.css";
