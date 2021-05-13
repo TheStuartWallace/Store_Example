@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/store-example/static/css/main.f2bc2123.chunk.css",
-    "main.js": "/store-example/static/js/main.9f82e1e4.chunk.js",
-    "main.js.map": "/store-example/static/js/main.9f82e1e4.chunk.js.map",
-    "runtime-main.js": "/store-example/static/js/runtime-main.f60d2085.js",
-    "runtime-main.js.map": "/store-example/static/js/runtime-main.f60d2085.js.map",
-    "static/js/2.5a355fe1.chunk.js": "/store-example/static/js/2.5a355fe1.chunk.js",
-    "static/js/2.5a355fe1.chunk.js.map": "/store-example/static/js/2.5a355fe1.chunk.js.map",
-    "index.html": "/store-example/index.html",
-    "precache-manifest.8b27c5ae2889679be9ba6fa8f86d74c3.js": "/store-example/precache-manifest.8b27c5ae2889679be9ba6fa8f86d74c3.js",
-    "service-worker.js": "/store-example/service-worker.js",
-    "static/css/main.f2bc2123.chunk.css.map": "/store-example/static/css/main.f2bc2123.chunk.css.map",
-    "static/js/2.5a355fe1.chunk.js.LICENSE.txt": "/store-example/static/js/2.5a355fe1.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/store-example/static/media/AndBasR.036c2c48.ttf"
+    "main.css": "/Store_Example/static/css/main.92a688d7.chunk.css",
+    "main.js": "/Store_Example/static/js/main.9f82e1e4.chunk.js",
+    "main.js.map": "/Store_Example/static/js/main.9f82e1e4.chunk.js.map",
+    "runtime-main.js": "/Store_Example/static/js/runtime-main.0448677e.js",
+    "runtime-main.js.map": "/Store_Example/static/js/runtime-main.0448677e.js.map",
+    "static/js/2.853b3578.chunk.js": "/Store_Example/static/js/2.853b3578.chunk.js",
+    "static/js/2.853b3578.chunk.js.map": "/Store_Example/static/js/2.853b3578.chunk.js.map",
+    "index.html": "/Store_Example/index.html",
+    "precache-manifest.4313376137f89d9d886ef6e1136ebc3a.js": "/Store_Example/precache-manifest.4313376137f89d9d886ef6e1136ebc3a.js",
+    "service-worker.js": "/Store_Example/service-worker.js",
+    "static/css/main.92a688d7.chunk.css.map": "/Store_Example/static/css/main.92a688d7.chunk.css.map",
+    "static/js/2.853b3578.chunk.js.LICENSE.txt": "/Store_Example/static/js/2.853b3578.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Store_Example/static/media/AndBasR.036c2c48.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.f60d2085.js",
-    "static/js/2.5a355fe1.chunk.js",
-    "static/css/main.f2bc2123.chunk.css",
+    "static/js/runtime-main.0448677e.js",
+    "static/js/2.853b3578.chunk.js",
+    "static/css/main.92a688d7.chunk.css",
     "static/js/main.9f82e1e4.chunk.js"
   ]
 }
