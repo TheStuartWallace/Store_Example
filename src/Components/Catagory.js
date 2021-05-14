@@ -28,8 +28,6 @@ class Catagory extends React.Component{
 				listValue : vals,
 				status : 1
 			});
-
-			console.log(vals);
 		}
 	}
 	
