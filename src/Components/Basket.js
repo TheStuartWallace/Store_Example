@@ -90,7 +90,7 @@ class Basket extends React.Component{
 
 	async handleClick(event){
 		const stripe = await stripePromise;
-		const response = await fetch('http://localhost:4242/checkout-session', { method: 'POST', body:JSON.stringify({
+		const response = await fetch('http://www.bystuart.co.uk/store-example/checkout-session', { method: 'POST', body:JSON.stringify({
 			uid : btoa(this.context.currentUser.uid),
 			data : btoa(this.parseData()),
 			throughdata : btoa(this.getBasketData()),
