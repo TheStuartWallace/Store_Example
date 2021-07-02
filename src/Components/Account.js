@@ -99,7 +99,7 @@ class Account extends React.Component{
 
 		case 1:
 			return (
-				<div className="accPanel">
+				<div className="accPanel" style={{"justify-content":"initial"}}>
 					<div className="accPanelTitle">Order History</div><br/>
 					{
 						this.context.orderHistory.map((data,index) => {
