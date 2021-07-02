@@ -14,7 +14,7 @@ class Account extends React.Component{
 		super(props);
 
 		this.state = {
-			status : 0,
+			status : -1,
 			showPage : 0,
 
 			maxPages : 2,
@@ -26,17 +26,9 @@ class Account extends React.Component{
 
 	}
 
-	componentDidUpdate(){
-		if(this.context.currentUser !== undefined && this.context.storeData !== undefined && this.context.orderHistory !== undefined && this.context.userData !== undefined && this.state.orderHistory === undefined){
-			this.setState({orderHistory : []},()=>this.processOrderHistory());
-		}
-	}
-
-	componentDidMount(){
-		if(this.context.currentUser !== undefined && this.context.storeData !== undefined && this.context.orderHistory !== undefined && this.context.userData !== undefined && this.state.orderHistory === undefined){
-			this.setState({orderHistory : []},()=>this.processOrderHistory());
-		}
-	}
+	componentDidMount(){this.waitForContext();	}
+	componentDidUpdate(prevProps, prevState, snapshot){		this.waitForContext();	}
+	waitForContext(){if(this.context && this.context.userData && this.context.currentUser && this.context.storeData && this.context.orderHistory && this.state.status === -1){this.setState({orderHistory : [], status : -2},()=>this.processOrderHistory());}}
 
 	async resetPassword(){
 		FirebaseAction.resetPassword(this.context.currentUser.email)
@@ -68,7 +60,7 @@ class Account extends React.Component{
 			array.push(currentOrder);
 			this.setState({orderHistory : array});
 		}
-		this.setState({status : 1});
+		this.setState({status : 0});
 	}
 
 	renderPanel(){
@@ -107,14 +99,14 @@ class Account extends React.Component{
 
 		case 1:
 			return (
-				<div className="accPanel" style={{"justify-content":"initial"}}>
+				<div className="accPanel">
 					<div className="accPanelTitle">Order History</div><br/>
 					{
 						this.context.orderHistory.map((data,index) => {
 							return (
-								<Link className="accPanelItem" to={"/account/order/"+data.id}>
+								<Link key={index} className="accPanelItem" to={"/account/order/"+data.id}>
 									<div className="accPanelItem" key={index}>
-										<div class="GlobalSpacer"></div>
+										<div className="GlobalSpacer"></div>
 										<span className="accOHItemPlaced">Placed: {data.created.toDate().toDateString()}</span><br/>
 										{
 											this.state.orderHistory[index].map((item,index2) => {
@@ -139,11 +131,11 @@ class Account extends React.Component{
 
 	render(){
 		switch(this.state.status){
-			case -1: default: return <span>Error!</span>;
+			case -3: default: return <span>Error!</span>;
 
-		case 0: return <LoadingScreen />
+		case -1: case -2: return <LoadingScreen />
 
-		case 1: 
+		case 0: 
 			return (
 				<div className="accWrapper">
 					<NavigationBar />

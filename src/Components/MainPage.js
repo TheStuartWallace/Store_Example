@@ -6,24 +6,17 @@ import {AuthContext} from './Auth';
 
 
 class MainPage extends React.Component{
-	
 	static contextType = AuthContext;
 	
 	constructor(props){
 		super(props);
-		
-		this.state = {
-			status : -1,
-		};
+
+		this.state = {status : -1};
 	}
 
-	componentDidUpdate(){
-		if(this.context !== undefined && this.context.storeData !== undefined && this.state.status === -1)		this.setState({status : 0});
-	}
-
-	componentDidMount(){
-		if(this.context !== undefined && this.context.storeData !== undefined && this.state.status === -1)		this.setState({status : 0});
-	}
+	componentDidMount(){this.waitForContext();	}
+	componentDidUpdate(prevProps, prevState, snapshot){		this.waitForContext();	}
+	waitForContext(){if(this.context && this.context.currentUser && this.context.storeData && this.context.orderHistory && this.state.status === -1)	this.setState({status : 0});}
 
 	render(){
 		switch(this.state.status){

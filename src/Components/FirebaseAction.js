@@ -126,6 +126,10 @@ class FirebaseAction{
 	static async resetPassword(e){
 		await firebase.auth().sendPasswordResetEmail(e);
 	}
+
+	static async setAdminData(data){
+		firebase.firestore().collection("adminData").add({...data, created : firebase.firestore.FieldValue.serverTimestamp()}).catch(console.error);
+	}
 }
 
 export default FirebaseAction;

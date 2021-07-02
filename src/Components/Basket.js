@@ -83,21 +83,19 @@ class Basket extends React.Component{
 			});
 		}
 
-		console.log(uploadData);
-
 		return JSON.stringify(uploadData);
 	}
 
 	async handleClick(event){
 		const stripe = await stripePromise;
-		const response = await fetch('https://www.bystuart.co.uk/store-example/checkout-session', { method: 'POST', body:JSON.stringify({
+		const response = await fetch('http://www.bystuart.co.uk/store-example/checkout-session', { method: 'POST', body:JSON.stringify({
 			uid : btoa(this.context.currentUser.uid),
 			data : btoa(this.parseData()),
 			throughdata : btoa(this.getBasketData()),
-		})});		
+		})});
 
 		const session = await response.json();
-
+		console.log(session.id);
 		const result = await stripe.redirectToCheckout({
 			sessionId: session.id,
 		});

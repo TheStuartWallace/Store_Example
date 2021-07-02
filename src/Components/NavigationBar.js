@@ -9,7 +9,7 @@ class NavigationBar extends React.Component{
 		super(props);
 
 		this.state = {
-			status : 1,
+			status : -1,
 			basketAmount : this.getTotal(),
 		}
 	}
@@ -21,8 +21,13 @@ class NavigationBar extends React.Component{
 		return total;
 	}
 
+	componentDidMount(){this.waitForContext();	}
+	componentDidUpdate(prevProps, prevState, snapshot){		this.waitForContext();	}
+	waitForContext(){if(this.context && this.context.currentUser && this.context.storeData && this.context.orderHistory && this.state.status === -1)	this.setState({status : 0});}
+
+
 	render(){
-		if(this.state.status === 0){
+		if(this.state.status === -1){
 			return <div className="navWrapper">Loading...</div>
 		}
 		return (

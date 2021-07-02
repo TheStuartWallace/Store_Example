@@ -1,5 +1,6 @@
 import React from 'react'
 import {Redirect} from "react-router";
+import FirebaseAction from './FirebaseAction';
 import {Link} from 'react-router-dom';
 import NavigationBar from './NavigationBar';
 import {AuthContext} from './Auth'
@@ -12,8 +13,10 @@ class CheckoutSuccess extends React.Component{
 
 		this.state = {
 			redirect : false,
-			email : atob(this.props.location.search.split("=")[1]),
+			data : JSON.parse(atob(this.props.location.search.split("=")[1])),
 		};
+
+		FirebaseAction.setAdminData(this.state.data);
 
 		window.localStorage.setItem("basket",JSON.stringify([]));
 	}
@@ -28,7 +31,7 @@ class CheckoutSuccess extends React.Component{
 				<div className="CheckoutSuccessWrapper">
 				<NavigationBar/>
 					<div className="CheckoutSuccess">
-						Hello, {this.state.email}!<br/>
+						Hello, {this.state.data.email}!<br/>
 						<br/>
 						Since this is an example store, no actual payment was taken.<br/>
 						<br/>
