@@ -10,7 +10,7 @@ class Basket extends React.Component{
 
 	constructor(props){
 		super(props);
-		this.state = {storedItems : JSON.parse(window.localStorage.getItem("basket")),};
+		this.state = {checkoutText : "Proceed to Checkout", storedItems : JSON.parse(window.localStorage.getItem("basket")),};
 	}
 
 	componentDidMount(){
@@ -87,6 +87,7 @@ class Basket extends React.Component{
 	}
 
 	async handleClick(event){
+		this.setState({checkoutText : "Please Wait..."});
 		const stripe = await stripePromise;
 		const response = await fetch('https://www.bystuart.co.uk/store-example/checkout-session', { method: 'POST', body:JSON.stringify({
 			uid : btoa(this.context.currentUser.uid),
@@ -101,6 +102,7 @@ class Basket extends React.Component{
 		});
 
 		if (result.error) {
+			this.setState({checkoutText : "Error: "+result.error.message});
 			console.error(response.text());
 		}
 	}
@@ -157,7 +159,7 @@ class Basket extends React.Component{
 						Your total comes to £{(this.state.grandTotal/100).toFixed(2)}
 						
 						<button className="basketCheckoutButton" role="link" onClick={(e)=>this.handleClick(e)}>
-							Proceed to Checkout
+							{this.state.checkoutText}
 						</button>
 					</div>
 				</div>
