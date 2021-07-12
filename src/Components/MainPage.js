@@ -16,7 +16,7 @@ class MainPage extends React.Component{
 
 	componentDidMount(){this.waitForContext();	}
 	componentDidUpdate(prevProps, prevState, snapshot){		this.waitForContext();	}
-	waitForContext(){if(this.context && this.context.currentUser && this.context.storeData && this.context.orderHistory && this.state.status === -1)	this.setState({status : 0});}
+	waitForContext(){if(this.context && this.context.storeData && this.state.status === -1)	this.setState({status : 0});}
 
 	render(){
 		switch(this.state.status){
