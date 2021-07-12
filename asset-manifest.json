@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/store-example/static/css/main.f2bc2123.chunk.css",
-    "main.js": "/store-example/static/js/main.1eda5720.chunk.js",
-    "main.js.map": "/store-example/static/js/main.1eda5720.chunk.js.map",
-    "runtime-main.js": "/store-example/static/js/runtime-main.f60d2085.js",
-    "runtime-main.js.map": "/store-example/static/js/runtime-main.f60d2085.js.map",
-    "static/js/2.bda0082f.chunk.js": "/store-example/static/js/2.bda0082f.chunk.js",
-    "static/js/2.bda0082f.chunk.js.map": "/store-example/static/js/2.bda0082f.chunk.js.map",
-    "index.html": "/store-example/index.html",
-    "precache-manifest.7bac0b93033da70232c7613897f6ae76.js": "/store-example/precache-manifest.7bac0b93033da70232c7613897f6ae76.js",
-    "service-worker.js": "/store-example/service-worker.js",
-    "static/css/main.f2bc2123.chunk.css.map": "/store-example/static/css/main.f2bc2123.chunk.css.map",
-    "static/js/2.bda0082f.chunk.js.LICENSE.txt": "/store-example/static/js/2.bda0082f.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/store-example/static/media/AndBasR.036c2c48.ttf"
+    "main.css": "/Store_Example/static/css/main.92a688d7.chunk.css",
+    "main.js": "/Store_Example/static/js/main.1eda5720.chunk.js",
+    "main.js.map": "/Store_Example/static/js/main.1eda5720.chunk.js.map",
+    "runtime-main.js": "/Store_Example/static/js/runtime-main.0448677e.js",
+    "runtime-main.js.map": "/Store_Example/static/js/runtime-main.0448677e.js.map",
+    "static/js/2.4033ceee.chunk.js": "/Store_Example/static/js/2.4033ceee.chunk.js",
+    "static/js/2.4033ceee.chunk.js.map": "/Store_Example/static/js/2.4033ceee.chunk.js.map",
+    "index.html": "/Store_Example/index.html",
+    "precache-manifest.402bedc7f863ba9ec32a53f0fe5d52bf.js": "/Store_Example/precache-manifest.402bedc7f863ba9ec32a53f0fe5d52bf.js",
+    "service-worker.js": "/Store_Example/service-worker.js",
+    "static/css/main.92a688d7.chunk.css.map": "/Store_Example/static/css/main.92a688d7.chunk.css.map",
+    "static/js/2.4033ceee.chunk.js.LICENSE.txt": "/Store_Example/static/js/2.4033ceee.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Store_Example/static/media/AndBasR.036c2c48.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.f60d2085.js",
-    "static/js/2.bda0082f.chunk.js",
-    "static/css/main.f2bc2123.chunk.css",
+    "static/js/runtime-main.0448677e.js",
+    "static/js/2.4033ceee.chunk.js",
+    "static/css/main.92a688d7.chunk.css",
     "static/js/main.1eda5720.chunk.js"
   ]
 }
