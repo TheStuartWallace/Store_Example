@@ -1,9 +1,9 @@
 import React from 'react';
-import NavigationBar from './NavigationBar';
-import {AuthContext} from './Auth';
-import firebase from './Firebase';
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import {AuthContext} from 'Components/Auth/Auth';
+import firebase from 'Components/Database/Firebase';
 import {Link, Redirect} from 'react-router-dom';
-import FirebaseAction from './FirebaseAction';
+import FirebaseAction from 'Components/Database/FirebaseAction';
 import ContentEditable from 'react-contenteditable'
 
 

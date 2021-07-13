@@ -1,14 +1,14 @@
 import React from 'react';
 
-import SearchBox from './SearchBox';
-import StoreItemPage from './StoreItemPage';
+import SearchBox from 'Components/Products/SearchBox';
+import ProductPage from 'Components/Products/ProductPage';
 
 class ProductList extends React.Component{
 	render(){
 		if(!this.props.match.params.id){
 			return <SearchBox />
 		}else{
-			return <StoreItemPage id={this.props.match.params.id}/>
+			return <ProductPage id={this.props.match.params.id}/>
 		}
 	}
 }

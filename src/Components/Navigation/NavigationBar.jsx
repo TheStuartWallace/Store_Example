@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {AuthContext} from './Auth';
+import {AuthContext} from 'Components/Auth/Auth';
 
 class NavigationBar extends React.Component{
 	static contextType = AuthContext;
@@ -23,7 +23,7 @@ class NavigationBar extends React.Component{
 
 	componentDidMount(){this.waitForContext();	}
 	componentDidUpdate(prevProps, prevState, snapshot){		this.waitForContext();	}
-	waitForContext(){if(this.context && this.context.storeData && this.state.status === -1)	this.setState({status : 0});}
+	waitForContext(){if(this.context && this.context.storeData &&	 this.state.status === -1)	this.setState({status : 0});}
 
 
 	render(){

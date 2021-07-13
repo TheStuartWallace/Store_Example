@@ -1,10 +1,10 @@
 import React from 'react'
 import { Redirect} from "react-router";
-import firebase from './Firebase';
-import NavigationBar from './NavigationBar';
-import {AuthContext} from './Auth';
+import firebase from 'Components/Database/Firebase';
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import {AuthContext} from 'Components/Auth/Auth';
 
-class StoreItemPage extends React.Component{
+export default class ProductPage extends React.Component{
 	static contextType = AuthContext;
 
 	constructor(props){
@@ -27,7 +27,6 @@ class StoreItemPage extends React.Component{
 			this.data.id = this.props.id;
 			this.data.quantity = 0;
 			this.data.displayPrice = this.data.productPrice / 100;
-			console.log(this.data);
 			this.setState({status:1});
 		});
 	}
@@ -64,7 +63,6 @@ class StoreItemPage extends React.Component{
 	}
 
 	render(){
-		console.log(this.data);
 		if(this.state.redirect)	return <Redirect to="/basket" />
 
 		if(this.state.status === 0){
@@ -126,5 +124,3 @@ class StoreItemPage extends React.Component{
 		}
 	}
 }
-
-export default StoreItemPage;

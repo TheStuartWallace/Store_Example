@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import 'index.css';
 import {HashRouter as Router, Route} from 'react-router-dom';
 
-import firebase from './Components/Firebase';
-import AuthProvider from './Components/Auth'
+import firebase from 'Components/Database/Firebase';
+import AuthProvider from 'Components/Auth/Auth'
 
-import ProductList from './Components/ProductList';
-import Basket from './Components/Basket';
-import CheckoutSuccess from './Components/CheckoutSuccess';
-import CheckoutCancel from './Components/CheckoutCancel';
-import MainPage from './Components/MainPage';
-import SignIn from './Components/SignIn';
-import Account from './Components/Account';
-import ProductEditor from './Components/ProductEditor';
-import Admin from './Components/Admin';
-import ViewOrder from './Components/ViewOrder';
+import ProductList from 'Components/Products/ProductList';
+import Basket from 'Components/Checkout/Basket';
+import CheckoutSuccess from 'Components/Checkout/CheckoutSuccess';
+import CheckoutCancel from 'Components/Checkout/CheckoutCancel';
+import MainPage from 'Components/MainPage';
+import SignIn from 'Components/Auth/SignIn';
+import Account from 'Components/Account/Account';
+import ProductEditor from 'Components/Products/Editor/ProductEditor';
+import Admin from 'Components/Admin/Admin';
+import ViewOrder from 'Components/Admin/ViewOrder';
 
 class MainApp extends React.Component{
 	constructor(props){

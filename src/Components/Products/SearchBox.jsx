@@ -1,10 +1,11 @@
 import React from 'react';
 
-import StoreListItem from './StoreListItem';
-import NavigationBar from './NavigationBar';
-import Catagory from './Catagory';
-import {AuthContext} from './Auth';
-import FirebaseAction from './FirebaseAction';
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import Catagory from 'Components/Products/Catagory';
+import {AuthContext} from 'Components/Auth/Auth';
+import FirebaseAction from 'Components/Database/FirebaseAction';
+import {Link} from 'react-router-dom';
+
 
 class SearchBox extends React.Component{
 	static contextType = AuthContext;
@@ -96,6 +97,27 @@ class SearchBox extends React.Component{
 			}
 		},()=>this.searchCatagory());
 	}
+
+	addToBasket(data){
+		let basket = JSON.parse(window.localStorage.getItem("basket"));
+		this.addBasketItem(basket,data);
+		window.localStorage.setItem("basket",JSON.stringify(basket));
+	}
+
+	addBasketItem(basket,data){
+
+		for(let a=0; a<basket.length; a++){
+			if(basket[a] !== undefined){
+				if(basket[a].id === this.props.data.id){
+					basket[a].quantity = parseInt(basket[a].quantity) + 1;
+					return;
+				}
+			}
+		}
+		basket.push(data);
+		basket[basket.length-1].quantity = 1;
+		return;
+	}
 	
 
 	render(){
@@ -112,9 +134,18 @@ class SearchBox extends React.Component{
 							
 							<div className="schResult">
 							{
-								this.dataList.map((data,index) => (
-									<StoreListItem key={index} data={data} />
-								))
+								this.dataList.map((data,index) => {
+									return (
+										<div className="sliWrapper">
+											<Link to={`/products/${data.id}`}>
+												<img src={data.image} alt={data.productName}/>
+												<h1>{JSON.parse(data.productName)}</h1>
+												<h2>£{data.displayPrice}</h2>
+												<button onClick={()=>this.addToBasket(data)}>Buy Now</button>
+											</Link>
+										</div>
+									);
+								})
 							}
 							</div>
 						</div>

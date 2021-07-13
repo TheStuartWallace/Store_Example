@@ -1,6 +1,6 @@
 import React from 'react';
-import firebase from './Firebase'
-import NavigationBar from './NavigationBar';
+import firebase from 'Components/Database/Firebase'
+import NavigationBar from 'Components/Navigation/NavigationBar';
 import {Redirect} from 'react-router-dom';
 
 class SignIn extends React.Component{

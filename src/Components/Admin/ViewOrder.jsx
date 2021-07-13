@@ -1,9 +1,9 @@
 import React from 'react';
 
-import FirebaseAction from './FirebaseAction';
-import LoadingScreen from './LoadingScreen';
-import NavigationBar from './NavigationBar';
-import {AuthContext} from './Auth';
+import FirebaseAction from 'Components/Database/FirebaseAction';
+import LoadingScreen from 'Components/Util/LoadingScreen';
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import {AuthContext} from 'Components/Auth/Auth';
 
 class ViewOrder extends React.Component{
 	static contextType = AuthContext;

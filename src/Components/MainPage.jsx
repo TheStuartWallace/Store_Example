@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import NavigationBar from './NavigationBar';
-import LoadingScreen from './LoadingScreen';
-import {AuthContext} from './Auth';
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import LoadingScreen from 'Components/Util/LoadingScreen';
+import {AuthContext} from 'Components/Auth/Auth';
 
 
 class MainPage extends React.Component{

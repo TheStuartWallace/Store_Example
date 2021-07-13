@@ -1,9 +1,10 @@
 import React from 'react'
 import {Redirect} from "react-router";
-import FirebaseAction from './FirebaseAction';
 import {Link} from 'react-router-dom';
-import NavigationBar from './NavigationBar';
-import {AuthContext} from './Auth'
+
+import FirebaseAction from 'Components/Database/FirebaseAction';
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import {AuthContext} from 'Components/Auth/Auth'
 
 class CheckoutSuccess extends React.Component{
 	static contextType = AuthContext;

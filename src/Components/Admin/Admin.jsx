@@ -1,9 +1,9 @@
 import React from 'react';
-import NavigationBar from './NavigationBar';
-import {AuthContext} from './Auth';
-import FirebaseAction from './FirebaseAction';
-import LoadingScreen from './LoadingScreen';
-import PageNavigation from './PageNavigation';
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import {AuthContext} from 'Components/Auth/Auth';
+import FirebaseAction from 'Components/Database/FirebaseAction';
+import LoadingScreen from 'Components/Util/LoadingScreen';
+import PageNavigation from 'Components/Navigation/PageNavigation';
 
 class Admin extends React.Component{
 	static contextType = AuthContext;

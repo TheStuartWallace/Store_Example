@@ -1,11 +1,12 @@
 import React from 'react';
 
-import {AuthContext} from './Auth';
-import FirebaseAction from './FirebaseAction';
 import {Link} from 'react-router-dom';
-import NavigationBar from './NavigationBar';
-import LoadingScreen from './LoadingScreen';
-import PageNavigation from './PageNavigation';
+
+import {AuthContext} from 'Components/Auth/Auth';
+import FirebaseAction from 'Components/Database/FirebaseAction';
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import LoadingScreen from 'Components/Util/LoadingScreen';
+import PageNavigation from 'Components/Navigation/PageNavigation';
 
 class Account extends React.Component{
 	static contextType = AuthContext;

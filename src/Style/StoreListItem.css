@@ -4,7 +4,7 @@
 	margin:1vh 0.5vw;
 }
 
-.sli{
+.sliWrapper a{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -15,12 +15,12 @@
 	border-radius: 0.4vw;
 }
 
-.sliImage{
+.sliWrapper img{
 	width:50%;
 	height:60%;
 }
 
-.sliTitle{
+.sliWrapper h1{
 	font-weight: bold;
 	font-size: 1rem;
 	overflow: hidden;
@@ -29,13 +29,13 @@
 	text-align: center;
 }
 
-.sliPrice{
+.sliWrapper h2{
 	text-align: center;
 	width:90%;
 	height: 10%; 
 }
 
-.sliBuy{
+.sliWrapper button{
 	width:90%; 
 	height:10%;
 	border:0vw;

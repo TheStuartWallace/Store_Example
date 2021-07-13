@@ -1,6 +1,6 @@
 import React from 'react'
-import NavigationBar from './NavigationBar';
-import {AuthContext} from './Auth';
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import {AuthContext} from 'Components/Auth/Auth';
 import { loadStripe } from '@stripe/stripe-js';
 	
 const stripePromise = loadStripe('pk_test_51HHEl2HbWsI0wL0616xJL9FkVOSuvpDFAfYvYfwwmOv044YOH4npf2jEko9ISFcouW3Y5ETqkQMWxeizaDANXNTL0018qa39p8');

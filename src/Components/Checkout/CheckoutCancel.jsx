@@ -1,8 +1,8 @@
 import React from 'react'
 import {Redirect} from "react-router";
 import {Link} from 'react-router-dom';
-import NavigationBar from './NavigationBar';
-import {AuthContext} from './Auth'
+import NavigationBar from 'Components/Navigation/NavigationBar';
+import {AuthContext} from 'Components/Auth/Auth'
 
 class CheckoutCancel extends React.Component{
 	static contextType = AuthContext;
