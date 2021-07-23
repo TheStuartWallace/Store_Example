@@ -26,14 +26,21 @@ class SignIn extends React.Component{
 	render(){
 		if(this.state.redirect !== null) return <Redirect to="/"/>
 		return (
-			<div className="SignInWrapper">
+			<div className="PageWrapper">
 				<NavigationBar />
-				<form onSubmit={this.handleSignIn}>
-					<label>Email<br/><input type="email" name="email" placeholder="example@example.com"/></label><br/>
-					<br/>
-					<label>Password<br/><input type="password" name="password" placeholder="password"/></label><br/>
-					<br/>
-					<button type="submit">Sign in</button>
+				<form onSubmit={this.handleSignIn}  className="SignInWrapper">
+					<div>
+						<h1>Email</h1>
+						<input type="email" name="email" placeholder="example@example.com"/>
+					</div>
+
+					<div>
+						<h1>Password</h1>
+						<input type="password" name="password" placeholder="password"/>
+					</div>
+					<div>
+						<button type="submit">Sign in</button>
+					</div>
 				</form>
 			</div>
 		);

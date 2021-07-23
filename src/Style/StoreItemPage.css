@@ -1,148 +1,95 @@
-.storeItemPageWrapper{
-	width:80%;
-	height:90%;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
-
-}
-
 .sipWrapper{
+	width: 100%;
+	height: 100%;
+}
+
+.sipWrapper header{height: 15%;}
+
+.sipWrapper main{
+	height: 75%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
-	flex-wrap: wrap;
-	overflow: auto;
-
-	width:100%;
-	height:90%;
 }
 
-.sipInfo{
-	height:100%;
-}
 
-.sipLeft{
-	width:60%;
-	height:100%;
-	text-align: center;
-	margin:0vh 1vw;
-
-}
-
-.sipRight{
-	width:35%;
-	height:100%;
-
-}
-
-.sipName{
-	font-size: 2rem;
-	font-weight: bold;
-	width:100%;
-	min-height:5%;
-}
-
-.sipImage{
-	width:80%;
-}
-
-.sipDesc{
+.sipWrapper main section{
+	width: 49%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-
-	height:60%;
 }
 
-.sipBuyBox{
+.sipWrapper main section[pos="right"] section[pos="top"] h1,.sipWrapper main section[pos="right"] section[pos="top"] h2{
+	margin: 0px;
+}
+
+.sipWrapper main section[pos="left"]{
+	font-weight: bold;
+	width: 40%;
+}
+
+.sipWrapper main section[pos="right"]{
+	width: 60%;
+}
+
+.sipWrapper main img{
+	width: 90%;
+}
+
+.sipWrapper footer{
+	height: 10%;
+}
+
+.sipWrapper main button{
+	width: 100%;
+	height: 100%;
+	border:  5px solid black;
+	border-radius: 25px;
+	background: black;
+	color: white;
+	font-size: 2rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
+}
+
+.sipWrapper main section section[pos="top"]{
+	width: 100%;	
+	height: 10%;
 	text-align: center;
-
-	height:20%;
 }
 
-.sipPrice{
-	font-size:2rem;
-	font-weight: bold;
+.sipWrapper main section section[pos="top"] h1{
+	width: 100%;	
+	font-size: 2rem;
 }
 
-.sipItemPP{
-	font-size:1rem;
+.sipWrapper main section section[pos="middle"]{
+	width: 80%;	
+	height: 82%;
 }
 
-.sipBuyWrapper{
-	height:20%;
+.sipWrapper main section section[pos="bottom"]{
+	width: 90%;	
+	height: 8%;
 }
 
-.sipBuyWrapper{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+@media only screen and (max-width:  650px){
+	.sipWrapper main{
+		flex-direction: column;
+	}
 
-.sipBuyButton{
-	font-size: 3rem;
-	font-weight: bold;
-	border:8px solid black;
-	border-radius: 100vw;
-	width:90%;
-	height:80%;
-	background: white;
-}
-
-
-@media only screen and (max-width:800px){
-	.sipBuyButton{
-		font-size: 2rem;
+	.sipWrapper main section[pos="left"], .sipWrapper main section[pos="right"]{
+		width: 90%;
 	}
 }
 
-@media only screen and (max-width:600px){
-
-	.storeItemPageWrapper{
-		width:90%;
-	}
-
-	.sipLeft, .sipRight{
-		width:100%;
-		height:auto;
-	}
-
-	.sipBuyButton{
-		font-size: 3rem;
-	}
-}
-
-
-@media only screen and (max-height:500px){
-	.sipBuyButton{
-		font-size: 1rem;
-	}
-
-	.sipDesc{
-		overflow: auto;
-	}
-
-	.sipPrice{
-		font-size:1rem;
-	
-	}
-
-	.sipItemPP{
-		font-size:0.8rem;
-	}
-}
-
-@media only screen and (max-height:300px){
-	.sipBuyButton{
-		font-size: 1rem;
+@media only screen and (max-height: 550px){
+	.sipWrapper main img{
+		width: 50%;
 	}
 }

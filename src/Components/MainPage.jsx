@@ -23,27 +23,28 @@ class MainPage extends React.Component{
 			case -1: default: return <LoadingScreen />
 		 
 			case 0: return (
-				<div className="PageWrapper">
+				<div className="MainPage">
 					<NavigationBar />
-					<div className="MainPageColumnWrapper">
-						<Link to={this.context.storeData[1].ColumnLinkLeft} className="MainPageColumnLeft">
-							<div className="MainPageColumn" style={{background:this.context.storeData[1].ColumnBackgroundLeft}}>
-								<img className="MainPageColumnImage" src={this.context.storeData[1].ColumnImageLeft} alt={this.context.storeData[1].ColumnAltLeft}/>
-							</div>
-						</Link>
+					<header></header>
+					<main>
+						<section style={{background:this.context.storeData[1].ColumnBackgroundLeft}} pos="left">
+							<Link to={this.context.storeData[1].ColumnLinkLeft}>
+								<img src={this.context.storeData[1].ColumnImageLeft} alt={this.context.storeData[1].ColumnAltLeft}/>
+							</Link>
+						</section>
 
-						<Link to={this.context.storeData[1].ColumnLinkCenter} className="MainPageColumnCenter">
-							<div className="MainPageColumn" style={{background:this.context.storeData[1].ColumnBackgroundCenter}}>
-								<img className="MainPageColumnImage" src={this.context.storeData[1].ColumnImageCenter} alt={this.context.storeData[1].ColumnAltCenter}/>
-							</div>
-						</Link>
+						<section  style={{background:this.context.storeData[1].ColumnBackgroundCenter}} pos="middle">
+							<Link to={this.context.storeData[1].ColumnLinkCenter}>
+								<img src={this.context.storeData[1].ColumnImageCenter} alt={this.context.storeData[1].ColumnAltCenter}/>
+							</Link>
+						</section>
 
-						<Link to={this.context.storeData[1].ColumnLinkRight} className="MainPageColumnRight">
-							<div className="MainPageColumn" style={{background:this.context.storeData[1].ColumnBackgroundRight}}>
-								<img className="MainPageColumnImage" src={this.context.storeData[1].ColumnImageRight} alt={this.context.storeData[1].ColumnAltRight}/>
-							</div>
-						</Link>
-					</div>
+						<section style={{background:this.context.storeData[1].ColumnBackgroundRight}} pos="right">
+							<Link to={this.context.storeData[1].ColumnLinkRight}>
+								<img src={this.context.storeData[1].ColumnImageRight} alt={this.context.storeData[1].ColumnAltRight}/>
+							</Link>
+						</section>
+					</main>
 				</div>
 			);
 		}

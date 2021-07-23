@@ -56,15 +56,26 @@ class ProductEditor extends React.Component{
 
 	handleChange(element,name){
 		let data;
-
+		
 		if(name === "productDescription"){
 			data = element.target.value;
-			data = data.replaceAll("<div>","");
-			data = data.replaceAll("</div>","");
-			data = data.replaceAll("<br>","\n");
+
+			data = data.replaceAll("</span><span><br></span>","\n\n");
+			data = data.replaceAll("<span>","");
+			data = data.replaceAll("</span>","\n");
+			data = data.replaceAll("&nbsp;"," ");
+
+			if(data.endsWith("\n")){
+				data = data.slice(0,-1);				
+			}
+
+		}else if(name === "productPrice"){
+			data = element.target.value.substr(1);
 		}else{
 			data = element.target.value;
 		}
+
+		console.log("[Saved] "+JSON.stringify(data));
 
 		this.setState({
 			changedData : {
@@ -72,6 +83,17 @@ class ProductEditor extends React.Component{
 				[name] : JSON.stringify(data),
 			}
 		});
+	}
+
+	getDescription(){
+		let des = this.state.changedData.productDescription;
+
+		des = JSON.parse(des);
+		des = des.split("\n");
+		des = des.map((data)=>{if(data === ""){return "<span><br></span>";} return "<span>"+data+"</span>";});
+		des = des.toString().replaceAll(">,<","><");
+
+		return des;
 	}
 
 	uploadFile(event){
@@ -93,64 +115,53 @@ class ProductEditor extends React.Component{
 	renderItem(){
 		if(this.state.status === 1){
 			if(this.data !== null){
-					return (
-					<div className="storeItemPageWrapper">
-						<NavigationBar/>
-						<div className="sipWrapper">
-							<div className="sipLeft">
+				return (
+					<div className="sipWrapper">
+						<header>
+							<NavigationBar/>
+						</header>
+						
+						<main>
+							<section pos="left">
+								<img src={this.data.image} />
+								<input type="file" onChange={(e)=>this.uploadFile(e)}/>
+							</section>
+
+							<section pos="right">
+								<section pos="top">
+									<ContentEditable
+										html={JSON.parse(this.state.changedData.productName)}
+										onChange={(e)=>{this.handleChange(e,"productName")}}
+										tagName="h1"
+									/>
+
+									<ContentEditable
+										html={"£"+JSON.parse(this.state.changedData.productPrice)}
+										onChange={(e)=>{this.handleChange(e,"productPrice")}}
+										tagName="h2"
+									/>
+								</section>
 								<ContentEditable 
-									html={JSON.parse(this.state.changedData.productName)} 
-									onChange={(e) => this.handleChange(e,"productName")}
-									className="sipName"/><br/>
-								
-								<img 	onClick={()=>window.open(this.state.changedData.image,'popup','scrollbars=no')} 	
-										className="sipImage" 
-										src={this.state.changedData.image} 
-										alt={`${this.state.changedData.productName}`} />
+										pos="middle"
+										html={this.getDescription()}
+										onChange={(e)=>{this.handleChange(e,"productDescription")}}
+										tagName="section"/>
+							
+								<section pos="bottom">
+									<button onClick={()=>this.saveChanges()}>Save Changes</button>
+								</section>
+							</section>
+						</main>
+						
+						<footer>
 
-								<input 
-									type="file"
-									onChange={(e)=>this.uploadFile(e)}
-								/>
-								
-							</div>
-
-							<div className="sipRight">
-								<div className="sipInfo">
-									<ContentEditable 
-										className="pedDesc" 
-										onChange={(e)=>this.handleChange(e,"productDescription")}
-										html={JSON.parse(this.state.changedData.productDescription).replaceAll("\n","<br>")}/>
-
-									<div className="sipBuyBox">
-										<div className="sipBoxPrice">
-											<span className="sipPrice">
-												£<ContentEditable 
-													html={""+JSON.parse(this.state.changedData.productPrice)} 
-													onChange={(e) => this.handleChange(e,"productPrice")}
-													tagName="span"/>
-											</span><br/>
-											<span className="sipItemPP">
-												(£
-													<ContentEditable 
-													html={""+JSON.parse(this.state.changedData.deliveryPrice)} 
-													onChange={(e) => this.handleChange(e,"deliveryPrice")}
-													tagName="span"/>
-												P&P)</span>
-										</div>
-									</div>
-
-									<div className="sipBuyWrapper">
-										<button className="sipBuyButton" onClick={()=>this.saveChanges()}>Save Changes</button>
-									</div>
-								</div>
-							</div>
-						</div>
+						</footer>
+						
 					</div>
 				);
 			}else{
 				return (
-					<div className="productEditorPage">
+					<div className="storeItemPage">
 						No product found
 					</div>
 				);
@@ -171,7 +182,7 @@ class ProductEditor extends React.Component{
 		};
 
 		const data = await firebase.firestore().collection("productList").add(blankData);
-		return <Redirect to={`/editor/${data.id}`} />
+		this.setState({redirect : '/editor/'+data.id});
 	}
 
 	renderSelector(){
@@ -179,26 +190,44 @@ class ProductEditor extends React.Component{
 			<div className="productEditorPage">
 			<NavigationBar/>
 				<div className="productEditorPageWrapper">
-					<span className="productEditorListTitle">Edit specific product</span>
+					<header>Edit specific product</header>
 					
+					<main>
 					{
-						this.data.map((data,index) => (
+						this.data.map((data,index) => {
+							console.log(data);
+							return (	
 								<div key={index} className="productEditorListContainer">
-									<Link key={index} to={`/editor/${data.id}`}>
-										<span className="productEditorListName">{data.productName}</span><br/>
-										<span className="productEditorListID">[{data.id}]</span>
-									</Link>
+									<section pos="left">
+										<img src={data.image} />
+									</section>
+									
+									<section pos="middle">
+										<h1>{JSON.parse(data.productName)}</h1>
+									</section>
+									
+									<section pos="right">
+										<button onClick={()=>{this.setState({redirect : "/editor/"+data.id})}}>Edit</button>
+										<button onClick={()=>{this.setState({redirect : "/editor/"+data.id})}}>Remove</button>
+									</section>	
 								</div>
-						))
+							);
+						})
 					}
-					<br/>
-					<button className="productEditorListAddButton" onClick={() => this.addNewProduct()}>Add new item</button>
+					</main>
+					<footer>
+						<button className="productEditorListAddButton" onClick={() => this.addNewProduct()}>Add new item</button>
+					</footer>
 				</div>
 			</div>
 		);
 	}
 
 	render(){
+		if(this.state.redirect){
+			return <Redirect to={this.state.redirect} />
+		}
+
 		if(this.state.status === 0){
 			return (
 				<div className="productEditorPage">

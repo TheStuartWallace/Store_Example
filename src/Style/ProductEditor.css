@@ -1,55 +1,149 @@
-.pedName{
-	font-family: AndBasR;
-	font-size: 2rem;
-	line-height: 5%;
-	font-weight: bold;
-	width:100%;
-	height:50%;
-
-	text-align: center;
-
-	background: none;
-	border:none;
-	padding:0px;
-	margin:0px;
+.productEditorListContainer{
+	width: 90%;
+	max-height: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	margin: 1% auto;
 }
 
-.pedDesc{
-	width:100%;
-	height:60%;
-	resize: none;
+.productEditorPage{
+	margin-top: 5%;
+	height: 100%;
+}
 
+.productEditorPageWrapper{
+	height: 100%;
+}
+
+.productEditorPageWrapper > header{
+	width: 100%;
+	height: 5%;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bolder;
+}
+
+
+.productEditorPageWrapper > main{
+	height: 75%;
+}
+
+.productEditorPageWrapper > footer{
+	width: 100%;
+	height: 5%;
+	text-align: center;
+}
+
+
+.productEditorPageWrapper > footer > button{
+	width: 40%;
+	height: 100%;
+	border-radius: 8px;
+	border: 0px;
+	background: black;
+	color: white;
+	font-weight: bolder;
+	font-size: 1rem;
+}
+
+.productEditorListContainer{
+	border-radius: 8px;
+}
+
+.productEditorListContainer section{
+	width: 32%;
+}
+
+.productEditorListContainer h1{
+	font-weight: bolder;
+	color: white;
+}
+
+.productEditorListContainer img{
+	width: 50px;
+	height: 50px;
+}
+.productEditorListContainer section {	text-align: center;	}
+.productEditorListContainer section[pos="left"]{	width: 10%;	}
+.productEditorListContainer section[pos="middle"]{	width: 70%; }
+.productEditorListContainer section[pos="right"]{ 	width: 20%; }
+
+.productEditorListContainer section button{
+	width: 48%;
+	margin: 0% 1%;
+	border: 2px solid white;
+	border-radius: 10px;
+	font-weight: bold;
+	color: black;
+	font-size: 1rem;
+}
+
+.editorPage{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.editorPage section{
+	width: 50%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-
-	font-family: AndBasR;
-	font-size: 1rem;
-
-	text-align: center;
-	background: transparent;
 }
 
-.pedPrice{
-	background: none;
-	border:none;
-	padding:0px;
-	margin:0px;
+.editorPage section h1{
+	font-weight: bolder;
+	font-size: 2rem;
+}
 
-	font-size:2rem;
+.editorPage section img{
+	width: 90%;
+}
+
+.sipLeft span{
 	font-weight: bold;
-
-	width:25%;
-
+	font-size: 2	rem;
+}
+.pedDesc{
+	min-height: 20%;
 }
 
-.pedPP{
-	background: none;
-	border:none;
-	padding:0px;
-	margin:0px;
+@media only screen and (max-width: 850px){
+	.productEditorListContainer h1{
+		font-size: 1rem;
+	}
 
-	font-size:1rem;
-	width:10%;
+	.productEditorListContainer section[pos="right"]{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+
+	.productEditorListContainer section button{
+		width: 100%;
+		margin: 1%;
+	}
+}
+
+
+@media only screen and (max-width: 850px){
+	.productEditorListContainer section[pos="left"]{
+		display: none;
+	}
+
+	.productEditorListContainer section[pos="middle"]{
+		width: 80%;
+	}
+
+	.productEditorListContainer section[pos="right"]{
+		width: 20%;
+	}
 }

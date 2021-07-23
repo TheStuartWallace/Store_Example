@@ -62,6 +62,22 @@ export default class ProductPage extends React.Component{
 		window.open(this.data.image);
 	}
 
+	getDescription(){
+		let des = this.data.productDescription;
+
+		des = JSON.parse(des);
+		des = des.split("\n");
+
+		des = des.map((data)=>{
+			if(data === ""){
+				return (<span><br/></span>);
+			} 
+			return (<span>{data}</span>);
+		});
+
+		return des;
+	}
+
 	render(){
 		if(this.state.redirect)	return <Redirect to="/basket" />
 
@@ -76,42 +92,38 @@ export default class ProductPage extends React.Component{
 		if(this.state.status === 1){
 			if(this.data !== null){
 				return (
-					<div className="storeItemPageWrapper">
-						<NavigationBar/>
-						<div className="sipWrapper">
-							<div className="sipLeft">
-								<div contentEditable="true" className="sipName">{JSON.parse(this.data.productName)}</div><br/>
-								
-								<img 	onClick={()=>window.open(this.data.image,'popup','scrollbars=no')} 	
-										className="sipImage" 
-										src={this.data.image} 
-										alt={`${this.data.productName}`} />
-								
-							</div>
+					<div className="sipWrapper">
+						<header>
+							<NavigationBar/>
+						</header>
+						
+						<main>
+							<section pos="left" onClick={()=>{return window.open(this.data.image)}}>
+								<img src={this.data.image} />
+								Click to expand
+							</section>
 
-							<div className="sipRight">
-								<div className="sipInfo">
-									<div className="sipDesc">
-										{
-											JSON.parse(this.data.productDescription).split("\n").map((data,index) =>(
-												<span>{data}<br/></span>
-											))
-										}
-									</div>
+							<section pos="right">
+								<section pos="top">
+									<h1>{JSON.parse(this.data.productName)}</h1>
+									<h2>£{JSON.parse(this.data.displayPrice)}</h2>
+									</section>
+								<section pos="middle">
+								{
+									this.getDescription()
+								}
+								</section>
+							
+								<section pos="bottom">
+									<button>Buy Now</button>
+								</section>
+							</section>
+						</main>
+						
+						<footer>
 
-									<div className="sipBuyBox">
-										<div className="sipBoxPrice">
-											<span className="sipPrice">£{this.data.displayPrice}</span><br/>
-											<span className="sipItemPP">(£{(this.data.deliveryPrice/100).toFixed(2)} P&P)</span>
-										</div>
-									</div>
-
-									<div className="sipBuyWrapper">
-										<button className="sipBuyButton" onClick={this.addToBasket}>Add to basket</button>
-									</div>
-								</div>
-							</div>
-						</div>
+						</footer>
+						
 					</div>
 				);
 			}else{
