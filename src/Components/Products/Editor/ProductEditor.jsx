@@ -75,8 +75,6 @@ class ProductEditor extends React.Component{
 			data = element.target.value;
 		}
 
-		console.log("[Saved] "+JSON.stringify(data));
-
 		this.setState({
 			changedData : {
 				...this.state.changedData,
@@ -185,6 +183,12 @@ class ProductEditor extends React.Component{
 		this.setState({redirect : '/editor/'+data.id});
 	}
 
+	removeItem(id){
+		if(window.confirm("This action cannot be undone, are you sure?")){
+			FirebaseAction.removeProduct(id);
+		}
+	}
+
 	renderSelector(){
 		return (
 			<div className="productEditorPage">
@@ -195,7 +199,6 @@ class ProductEditor extends React.Component{
 					<main>
 					{
 						this.data.map((data,index) => {
-							console.log(data);
 							return (	
 								<div key={index} className="productEditorListContainer">
 									<section pos="left">
@@ -208,7 +211,7 @@ class ProductEditor extends React.Component{
 									
 									<section pos="right">
 										<button onClick={()=>{this.setState({redirect : "/editor/"+data.id})}}>Edit</button>
-										<button onClick={()=>{this.setState({redirect : "/editor/"+data.id})}}>Remove</button>
+										<button onClick={()=>{this.removeItem(data.id)}}>Remove</button>
 									</section>	
 								</div>
 							);

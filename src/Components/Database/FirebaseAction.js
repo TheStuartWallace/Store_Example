@@ -19,6 +19,11 @@ class FirebaseAction{
 		return mainData;
 	}
 
+	static async removeProduct(id){
+		return await firebase.firestore().collection("productList").doc(id).delete().catch(console.error);
+
+	}
+
 	static async getUserData(user){
 		const data = await firebase.firestore().collection("userData").doc(user);
 		const mainData = await data.get();
