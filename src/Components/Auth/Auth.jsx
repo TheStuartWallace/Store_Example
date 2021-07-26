@@ -21,12 +21,14 @@ class AuthProvider extends React.Component{
 		firebase.auth().onAuthStateChanged(user =>{
 			this.setState({currentUser : user});
 			if(user === null) return;
+
 			this.loadData(user.uid).then(userData =>{
 				this.setState({userData});
 			});
+
 			this.loadOrderHistory(user.uid).then(orderHistory =>{
 				this.setState({orderHistory : orderHistory})
-			});
+			}).catch(console.error);
 		});
 
 		this.loadStoreData().then(data =>{

@@ -135,6 +135,26 @@ class FirebaseAction{
 	static async setAdminData(data){
 		firebase.firestore().collection("adminData").add({...data, created : firebase.firestore.FieldValue.serverTimestamp()}).catch(console.error);
 	}
+
+	static async createUser(display,email,password){
+		return await firebase.auth().createUserWithEmailAndPassword(email, password).then(data=>{
+			firebase.firestore().collection("userData").doc(data.user.uid).set({
+				displayName : display,
+				isAdmin : false,
+			}).catch((error)=>{
+
+				return error;
+			});
+
+			return data.user.uid;
+		});
+	}
+
+	static async signIn(email,password){
+		return await firebase.auth().signInWithEmailAndPassword(email,password).then(data=>{
+			return data.user.uid;
+		}).catch((error)=>{return error});
+	}
 }
 
 export default FirebaseAction;

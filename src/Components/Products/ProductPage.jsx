@@ -115,7 +115,7 @@ export default class ProductPage extends React.Component{
 								</section>
 							
 								<section pos="bottom">
-									<button>Buy Now</button>
+									<button onClick={(e)=>this.addToBasket()}>Buy Now</button>
 								</section>
 							</section>
 						</main>

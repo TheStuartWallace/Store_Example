@@ -12,6 +12,7 @@ import CheckoutSuccess from 'Components/Checkout/CheckoutSuccess';
 import CheckoutCancel from 'Components/Checkout/CheckoutCancel';
 import MainPage from 'Components/MainPage';
 import SignIn from 'Components/Auth/SignIn';
+import SignUp from 'Components/Auth/SignUp';
 import Account from 'Components/Account/Account';
 import ProductEditor from 'Components/Products/Editor/ProductEditor';
 import Admin from 'Components/Admin/Admin';
@@ -56,6 +57,7 @@ class MainApp extends React.Component{
 					<Route path="/cancel" exact component={CheckoutCancel} />
 					<Route path="/products/:id?" exact component={ProductList}/>
 					<Route path="/signin" exact component={SignIn}/>
+					<Route path="/signup" exact component={SignUp}/>
 					<Route path="/account" exact component={Account}/>
 					<Route path="/editor/:id?" exact component={ProductEditor} />
 					<Route path="/admin" exact component={Admin} />

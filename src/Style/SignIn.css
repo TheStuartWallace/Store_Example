@@ -28,6 +28,14 @@
 	text-align: center;
 }
 
+.SignInWrapper div[flag="error"]{
+	height: 5%;
+	font-weight: bolder;
+	color: red;
+	text-align: center;
+	user-select: ;
+}
+
 
 .SignInWrapper div input:hover{
 	background: grey;
@@ -42,6 +50,11 @@
 	background: black;
 	color: white;
 	font-weight: bold;
+	cursor: pointer;
+}
+
+.SignInWrapper div h4{
+	cursor: pointer;
 }
 
 @media only screen and (max-height: 500px){
