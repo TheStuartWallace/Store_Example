@@ -27,12 +27,12 @@
 	overflow: auto;
 }
 
-.schInput{
+.schContainer section[type="right"] > input{
 	width:99%;
 	height:3vh;
 }
 
-.schLeft, .schRight{
+.schContainer section{
 	width:25%;
 	height: 90%;
 	display: flex;
@@ -42,14 +42,14 @@
 	margin-top:2%;
 }
 
-.schRight{
+.schContainer section[type="right"]{
 	width:70%;
 	justify-content: flex-start;
 	flex-direction: column;
 	padding:1%;
 }
 
-.schResult{
+.schContainer section[type="right"] > div{
 	width:100%;
 	height:90%;
 

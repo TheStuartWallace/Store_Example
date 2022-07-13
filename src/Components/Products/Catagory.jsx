@@ -2,7 +2,7 @@ import React from 'react';
 import LoadingScreen from 'Components/Util/LoadingScreen';
 import {AuthContext} from 'Components/Auth/Auth';
 
-class Catagory extends React.Component{
+export default class Catagory extends React.Component{
 	static contextType = AuthContext;
 
 	constructor(props){
@@ -40,28 +40,23 @@ class Catagory extends React.Component{
 
 			case 1: return (
 				<div className="catWrapper">
-					<div className="catList" >
 						{
 							Object.keys(this.state.listKeys).map((data,index) => {
 
 								return (
-									<div key={index} className="catListTag">
+									<div key={index}>
 										<input 	type="checkbox" 
 												id={this.state.listKeys[index]} 
 												name="Catagorys"
-												className="catCheck" 
 												onChange={(e) => this.props.handleSearch(e)}/>
 
-										<label 	className="catLabel" htmlFor={this.state.listKeys[index]}>{this.state.listKeys[index]}</label>
+										<label 	htmlFor={this.state.listKeys[index]}>{this.state.listKeys[index]}</label>
 									</div>
 								);
 							})
 						}
-					</div>
 				</div>
 				)
 		}
 	}
 }
-
-export default Catagory;

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://thestuartwallace.github.io/Store_Example/",
+  "homepage": "https://www.bystuart.co.uk/projects/store-example",
   "dependencies": {
     "@stripe/react-stripe-js": "^1.4.0",
     "@stripe/stripe-js": "^1.13.2",

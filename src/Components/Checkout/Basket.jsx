@@ -5,7 +5,7 @@ import { loadStripe } from '@stripe/stripe-js';
 	
 const stripePromise = loadStripe('pk_test_51HHEl2HbWsI0wL0616xJL9FkVOSuvpDFAfYvYfwwmOv044YOH4npf2jEko9ISFcouW3Y5ETqkQMWxeizaDANXNTL0018qa39p8');
 
-class Basket extends React.Component{
+export default class Basket extends React.Component{
 	static contextType = AuthContext;
 
 	constructor(props){
@@ -112,60 +112,53 @@ class Basket extends React.Component{
 			<div className="basketWrapper">
 				<NavigationBar/>
 				<div className="basketContainer">
-					<div className="basketTopBar">
+					<header>
 						My Basket
-					</div>
+					</header>
 
-					<div className="basketList">
+					<main>
 						{
 							this.state.storedItems.map((item,index) => (
-								<div className="basketListItem" key={index}>
-									<div className="basketListItemImageCont"><img className="basketListItemImage" alt="Store Item" src={item.image}/></div>
-									<div className="basketListItemName">{JSON.parse(item.productName)}</div>
-									<div className="basketListItemPrice">
-										<div className="basketListItemPriceMain">
-											£{((item.productPrice * item.quantity)/100).toFixed(2)}
-										</div>
-										
-										<div className="basketListItemPriceDelivery">
-											£{((item.deliveryPrice * item.quantity)/100).toFixed(2)}
-										</div>
-										
-									</div>
-									<div className="basketListItemQuantity">
+								<div key={index}>
+									<section type="image"><img alt="Store Item" src={item.image}/></section>
+
+									<section type="name">{JSON.parse(item.productName)}</section>
+
+									<section type="price">
+										<h1>£{((item.productPrice * item.quantity)/100).toFixed(2)}</h1>
+										<h2>£{((item.deliveryPrice * item.quantity)/100).toFixed(2)}</h2>
+									</section>
+
+									<section type="quantity">
 										<input 	type="number"
-												className="basketListItemQuantityInput" 
 												id={item.id}
 												min="1" max="99" 
 												defaultValue={item.quantity} 
 												onChange={e => this.changeBasketItemQuantity(e)}
 										/>
-									</div>
+									</section>
 
-									<div className="basketListItemRemove">
+									<section type="remove">
 										<input 	type="submit"
 												id={item.id}
-												className="basketListItemQuantityRemove"
 												value="&#10007;"
 												onClick={e => this.removeItem(e)}
 										/>
-									</div>
+									</section>
 								</div>
 							))
 						}
-					</div>
+					</main>
 
-					<div className="basketBottomBar">
+					<footer>
 						Your total comes to £{(this.state.grandTotal/100).toFixed(2)}
 						
-						<button className="basketCheckoutButton" role="link" onClick={(e)=>this.handleClick(e)}>
+						<button role="link" onClick={(e)=>this.handleClick(e)}>
 							{this.state.checkoutText}
 						</button>
-					</div>
+					</footer>
 				</div>
 			</div>
 		);
 	}
 }
-
-export default Basket;

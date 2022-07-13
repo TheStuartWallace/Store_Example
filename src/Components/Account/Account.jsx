@@ -29,7 +29,17 @@ class Account extends React.Component{
 
 	componentDidMount(){this.waitForContext();	}
 	componentDidUpdate(prevProps, prevState, snapshot){		this.waitForContext();	}
-	waitForContext(){if(this.context && this.context.userData && this.context.currentUser && this.context.storeData && this.context.orderHistory && this.state.status === -1){this.setState({orderHistory : [], status : -2},()=>this.processOrderHistory());}}
+
+	waitForContext(){
+		if(	this.context && 
+			this.context.userData && 
+			this.context.currentUser && 
+			this.context.storeData && 
+			this.context.orderHistory && 
+			this.state.status === -1){
+				this.setState({orderHistory : [], status : -2},()=>this.processOrderHistory());
+		}
+	}
 
 	async resetPassword(){
 		FirebaseAction.resetPassword(this.context.currentUser.email)

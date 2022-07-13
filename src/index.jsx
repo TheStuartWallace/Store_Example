@@ -12,6 +12,7 @@ import CheckoutSuccess from 'Components/Checkout/CheckoutSuccess';
 import CheckoutCancel from 'Components/Checkout/CheckoutCancel';
 import MainPage from 'Components/MainPage';
 import SignIn from 'Components/Auth/SignIn';
+import LoadingScreen from 'Components/Util/LoadingScreen';
 import SignUp from 'Components/Auth/SignUp';
 import Account from 'Components/Account/Account';
 import ProductEditor from 'Components/Products/Editor/ProductEditor';
@@ -45,7 +46,7 @@ class MainApp extends React.Component{
 
 	render(){
 		if(this.state.status === 0 || this.context.storeData === null){
-			return <div className="Wrapper">Loading data...</div>
+			return <LoadingScreen />
 		}
 
 		return (

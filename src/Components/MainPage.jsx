@@ -5,18 +5,25 @@ import LoadingScreen from 'Components/Util/LoadingScreen';
 import {AuthContext} from 'Components/Auth/Auth';
 
 
-class MainPage extends React.Component{
+export default class MainPage extends React.Component{
 	static contextType = AuthContext;
 	
 	constructor(props){
 		super(props);
-
 		this.state = {status : -1};
 	}
 
-	componentDidMount(){this.waitForContext();	}
-	componentDidUpdate(prevProps, prevState, snapshot){		this.waitForContext();	}
-	waitForContext(){if(this.context && this.context.storeData && this.state.status === -1)	this.setState({status : 0});}
+	componentDidMount(){
+		this.waitForContext();	
+	}
+
+	componentDidUpdate(prevProps, prevState, snapshot){	
+		this.waitForContext();
+	}
+
+	waitForContext(){
+		if(this.context && this.context.storeData && this.state.status === -1)	this.setState({status : 0});
+	}
 
 	render(){
 		switch(this.state.status){
@@ -50,5 +57,3 @@ class MainPage extends React.Component{
 		}
 	}
 }
-
-export default MainPage;

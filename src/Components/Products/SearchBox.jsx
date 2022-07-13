@@ -125,14 +125,14 @@ class SearchBox extends React.Component{
 			<div className="schWrapper">
 				<NavigationBar/>
 					<div className="schContainer">
-						<div className="schLeft">
+						<section type="left">
 							<Catagory handleSearch={(e) => this.handleCatagoryList(e)}/>
-						</div>
+						</section>
 
-						<div className="schRight">
-							<input type="text" className="schInput" placeholder="Search..." onChange={(e)=>this.search(e)}/><br/>
+						<section type="right">
+							<input type="text" placeholder="Search..." onChange={(e)=>this.search(e)}/><br/>
 							
-							<div className="schResult">
+							<div>
 							{
 								this.dataList.map((data,index) => {
 									return (
@@ -148,7 +148,7 @@ class SearchBox extends React.Component{
 								})
 							}
 							</div>
-						</div>
+						</section>
 					</div>
 			</div>
 		);
