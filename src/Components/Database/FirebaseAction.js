@@ -107,14 +107,12 @@ class FirebaseAction{
 		const file = event.target.files[0];
 		const meta = {contentType : file.type};
 		const name = id;
-
-		const task = ref.child(name).put(file,meta);
 		
-		return await task;
+		return await ref.child(name).put(file,meta);;
 	}
 
 	static async advanceOrder(order){
-		firebase.firestore().collection("adminData").doc(order.id).update({
+		return firebase.firestore().collection("adminData").doc(order.id).update({
 			status : (order.status + 1)
 		}).catch((error) => {
 			console.error(error);
@@ -122,18 +120,18 @@ class FirebaseAction{
 	}
 
 	static async saveSettings(e){
-		firebase.firestore().collection("storeSettings").doc("StoreSettings").update(e)
+		return firebase.firestore().collection("storeSettings").doc("StoreSettings").update(e)
 		.catch((error) => {
 			console.error(error);
 		});
 	}
 
 	static async resetPassword(e){
-		await firebase.auth().sendPasswordResetEmail(e);
+		return await firebase.auth().sendPasswordResetEmail(e);
 	}
 
 	static async setAdminData(data){
-		firebase.firestore().collection("adminData").add({...data, created : firebase.firestore.FieldValue.serverTimestamp()}).catch(console.error);
+		return firebase.firestore().collection("adminData").add({...data, created : firebase.firestore.FieldValue.serverTimestamp()}).catch(console.error);
 	}
 
 	static async createUser(display,email,password){

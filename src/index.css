@@ -1,3 +1,5 @@
+/**{ outline:1px solid black; outline-offset: -1px; }*/
+
 html,body, #root{
 	font-family: 		AndBasR;
 	width:				100%;
@@ -101,3 +103,4 @@ label{
 @import "./Style/Admin.css";
 @import "./Style/ViewOrder.css";
 @import "./Style/SignIn.css";
+@import "./Style/DispatchPortal.css";

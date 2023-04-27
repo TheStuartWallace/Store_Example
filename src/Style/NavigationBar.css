@@ -1,83 +1,65 @@
 .navWrapper{
 	font-weight: 		bold;
 	overflow: 			auto;
-	padding:			0.1vw;
+	padding:			0.2vw;
 
 	display: 			flex;		
 	align-items: 		center;	
-	justify-content: 	center;
+	justify-content: 	left;
 	flex-direction: 	row;
 	border-bottom:		1px solid black;
-	background: 		rgba(255,255,255,0.8);
+	background: 		black;
+	color: 				white;
 
 	position: fixed;
 	top:0px;
 	left:0px;
 	right:0px;
 
-	height:50px;
+	height:60px;
 }
 
-.navButtonHome, .navButtonCatagories, .navButtonBasket{
-	border:				0vw solid black;
-	height:				99%;			
-	min-height:			99%;
-	width:				99%;			
-	min-width: 			99%;
-	margin:				0px auto;
-	border-radius: 		4px;
-	font-size:			1rem;
-	font-family: 		AndBasR;
+.navWrapper > a , .navWrapper > a > header{
+	width:20%;
+	height:95%;
+}
+
+.navWrapper > a > header{
+	width: 100%;
+	height: 100%;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	background: none;
+	padding-left: 1%;
+	font-size: 2rem;
+	text-align: center;
+	color:white;
 }
 
-.navLink{
-	width:				20%;			
-	min-width:			20%;
-	height:				100%; 		
-	min-height: 		100%;
-	margin:				0px 	2px;
-	text-align: 		center;
+.navWrapper > section{
+	width: 58%;
 }
 
-.navButtonHome:hover, .navButtonCatagories:hover, .navButtonBasket:hover{
-	background: 		var(--NavigationBarBackgroundHover);
+.navWrapper > footer{
+	width: 20%;
+	height: 95%;
+	display: flex;
+	align-items: center;
 }
 
-.navButtonHome{}
-.navButtonCatagories{}
-.navButtonBasket{}
-
-.navLinkButtonText{
-	display: block;
+.navWrapper > footer > input{
+	border:2px solid grey;
+	border-right: 0px;
+	border-radius: 5px 0px 0px 5px;
+	width: 90%;
+	height: 50%;
+	display: inline-block;
 }
 
-.navLinkButtonImage{
-	display: none;
-	height:70%;
-}
-
-@media only screen and (max-width:650px){
-	.navLink, .navButtonHome, .navButtonCatagories, .navButtonBasket{
-		font-size:0.8rem;
-	}
-
-	.navTitle{
-		font-size:0.8rem;
-	}
-}
-
-
-@media only screen and (max-width:650px){
-
-	.navLinkButtonText{
-		display: none;
-	}
-
-	.navLinkButtonImage{
-		display: block;
-	}
+.navWrapper > footer > button{
+	border:2px solid grey;
+	border-left:0px;
+	border-radius: 0px 5px 5px 0px;
+	width:10%;
+	height: 60%;
+	display: inline-block;
 }

@@ -1,0 +1,22 @@
+.dispatchWrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+
+.dispatchWrapper > div{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.dspOrder{
+	width:99%;
+}
+
+.dspOrder > h1{
+
+}

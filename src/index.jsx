@@ -18,6 +18,7 @@ import Account from 'Components/Account/Account';
 import ProductEditor from 'Components/Products/Editor/ProductEditor';
 import Admin from 'Components/Admin/Admin';
 import ViewOrder from 'Components/Admin/ViewOrder';
+import DispatchPortal from 'Components/Admin/DispatchPortal';
 
 class MainApp extends React.Component{
 	constructor(props){
@@ -62,6 +63,7 @@ class MainApp extends React.Component{
 					<Route path="/account" exact component={Account}/>
 					<Route path="/editor/:id?" exact component={ProductEditor} />
 					<Route path="/admin" exact component={Admin} />
+					<Route path="/dispatch" exact component={DispatchPortal} />
 					<Route path="/account/order/:id?" component={ViewOrder} />
 				</Router>
 			</AuthProvider>

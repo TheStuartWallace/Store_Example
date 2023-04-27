@@ -132,7 +132,7 @@ class SearchBox extends React.Component{
 						<section type="right">
 							<input type="text" placeholder="Search..." onChange={(e)=>this.search(e)}/><br/>
 							
-							<div>
+							<div className="sliContainer">
 							{
 								this.dataList.map((data,index) => {
 									return (

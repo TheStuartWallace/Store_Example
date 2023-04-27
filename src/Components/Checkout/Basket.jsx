@@ -89,6 +89,7 @@ export default class Basket extends React.Component{
 	async handleClick(event){
 		this.setState({checkoutText : "Please Wait..."});
 		const stripe = await stripePromise;
+		
 		const response = await fetch('https://www.bystuart.co.uk/store-example/checkout-session', { method: 'POST', body:JSON.stringify({
 			uid : btoa(this.context.currentUser.uid),
 			data : btoa(this.parseData()),
@@ -96,7 +97,7 @@ export default class Basket extends React.Component{
 		})});
 
 		const session = await response.json();
-		console.log(session.id);
+
 		const result = await stripe.redirectToCheckout({
 			sessionId: session.id,
 		});
